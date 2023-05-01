@@ -1,0 +1,88 @@
+
+.EditarForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+    margin: 0 auto;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
+}
+
+.TextForm {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.6em;
+}
+
+.Text {
+  color: White;
+  font-size: 28px;
+}
+
+.Label {
+  color: white;
+  font: 1em sans-serif;
+  font-weight: 600;
+}
+.EditPut{
+  background-color: #212121;
+  border-radius: 5px;
+  outline: 0;
+  color: white;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.Box {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
+  align-content: center;
+
+}
+
+.Btn{
+align-items: center;
+background-image: linear-gradient(104deg,#212121, #242424 50%,#171717);
+border: 0;
+border-radius: 8px;
+box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+box-sizing: border-box;
+background-color: rgb(5, 6, 45);
+color: #FFFFFF;
+display: flex;
+font-family: Phantomsans, sans-serif;
+font-size: 20px;
+justify-content: center;
+line-height: 1em;
+max-width: 100%;
+min-width: 140px;
+padding: 3px;
+text-decoration: none;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+white-space: nowrap;
+cursor: pointer;
+}
+
+.Btn:active,
+.Btn:hover {
+outline: 0;
+}
+
+
