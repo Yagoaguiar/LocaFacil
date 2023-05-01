@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import style from './Machine.module.css'
 
 
-const AdicionarMaquina = () => {
+const AdicionarMaquina = (props) => {
   const navigate = useNavigate();
   const [machines, setMachines] = useState([]);
   const [formData, setFormData] = useState({
@@ -15,6 +15,10 @@ const AdicionarMaquina = () => {
     image: null
   });
 
+  function handleClick(event) {
+    props.onLogout(event)
+    navigate('/TodasAsMaquinas')
+}
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -29,10 +33,6 @@ const AdicionarMaquina = () => {
       ...prevData,
       image: URL.createObjectURL(imageFile)
     }));
-  };
-
-  const handleClick = () => {
-    navigate('/todas-as-maquinas');
   };
 
   const handleSubmit = (event) => {
@@ -52,7 +52,7 @@ const AdicionarMaquina = () => {
   return (
     <div className={style.formContainer}>
       
-      <form className={style.Mainform} onSubmit={handleSubmit}>
+      <form className={style.Mainform}>
         <h1 className={style.TittleOne}>Adicionar Máquina</h1>
         <label className={style.mainLabel}>
           Título:
@@ -119,7 +119,7 @@ const AdicionarMaquina = () => {
           />
         </label>
         <br />
-        <button type="submit">Adicionar Máquina</button>
+        <button onClick={handleClick}>Adicionar Máquina</button>
       </form>
       <div>
         {machines.map(machine => (
@@ -135,7 +135,7 @@ const AdicionarMaquina = () => {
           </div>
         ))}
       </div>
-      <button onClick={handleClick}>Ir para Todas as Máquinas</button>
+
     </div>
   );
 };
