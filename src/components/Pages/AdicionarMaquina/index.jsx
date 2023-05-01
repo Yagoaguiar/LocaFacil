@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import style from './Machine.module.css'
 
 
 const AdicionarMaquina = () => {
@@ -49,12 +50,14 @@ const AdicionarMaquina = () => {
   };
 
   return (
-    <div>
-      <h1>Adicionar Máquina</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className={style.formContainer}>
+      
+      <form className={style.Mainform} onSubmit={handleSubmit}>
+        <h1 className={style.TittleOne}>Adicionar Máquina</h1>
+        <label className={style.mainLabel}>
           Título:
           <input
+            className={style.mainInput}
             type="text"
             name="title"
             value={formData.title}
@@ -62,9 +65,10 @@ const AdicionarMaquina = () => {
           />
         </label>
         <br />
-        <label>
+        <label className={style.mainLabel}>
           Descrição:
           <input
+          className={style.mainInput}
             type="text"
             name="description"
             value={formData.description}
@@ -72,9 +76,10 @@ const AdicionarMaquina = () => {
           />
         </label>
         <br />
-        <label>
+        <label className={style.mainLabel}>
           Código da Máquina:
           <input
+          className={style.mainInput}
             type="text"
             name="machineCode"
             value={formData.machineCode}
@@ -82,9 +87,10 @@ const AdicionarMaquina = () => {
           />
         </label>
         <br />
-        <label>
+        <label className={style.mainLabel}>
           Tração:
           <input
+          className={style.mainInput}
             type="text"
             name="traction"
             value={formData.traction}
@@ -92,9 +98,10 @@ const AdicionarMaquina = () => {
           />
         </label>
         <br />
-        <label>
+        <label className={style.mainLabel}>
           Valor:
           <input
+          className={style.mainInput}
             type="text"
             name="value"
             value={formData.value}
@@ -102,9 +109,10 @@ const AdicionarMaquina = () => {
           />
         </label>
         <br />
-        <label>
+        <label className={style.mainLabel}>
           Imagem:
           <input
+          className={style.mainInput}
             type="file"
             accept="image/*"
             onChange={handleImageChange}
@@ -118,7 +126,7 @@ const AdicionarMaquina = () => {
           <div key={machine.id}>
             <h3>{machine.title}</h3>
             <p>{machine.description}</p>
-            <p>Código da Máquina: {machine.machineCode}</p>
+            <p className={style.teste}>Código da Máquina: {machine.machineCode}</p>
             <p>Tração: {machine.traction}</p>
             <p>Valor: {machine.value}</p>
             {machine.image && (
