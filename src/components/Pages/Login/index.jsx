@@ -2,7 +2,14 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 
-function Login() {
+function Login(props) {
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.onLogin(email, password);
+    navigate("/AdicionarMaquina");
+  };
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -12,19 +19,16 @@ function Login() {
   const esqueciSenha = () => {
     navigate('/esquecisenha')
   }
-  const adicionarMaquina = () => {
-    navigate('/AdicionarMaquina');
-  };
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // lógica de autenticação aqui
+
   };
 
   return (
     <div className={styles.loginBox}>
       <h1 className={styles.Txtp}>Login</h1>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSubmit}>
         <label className={styles.userBox}>
           E-mail:
           <input
@@ -42,9 +46,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button className={styles.botao1} type="submit" onClick={adicionarMaquina}>
-          Entrar
-        </button>
+        <button className={styles.botao1} type="submit">Entrar</button>
         <button className={styles.botao2} type="submit" onClick={cadastre}>Cadastre-se</button>
       </form>
       
