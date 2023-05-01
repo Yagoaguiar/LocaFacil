@@ -23,11 +23,12 @@ function Login() {
 
   return (
     <div className={styles.loginBox}>
-      <h1>Login</h1>
+      <h1 className={styles.Txtp}>Login</h1>
       <form onSubmit={handleLogin}>
         <label className={styles.userBox}>
           E-mail:
           <input
+            className={styles.Putin}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -35,7 +36,7 @@ function Login() {
         </label>
         <label className={styles.userBox}>
           Senha:
-          <input
+          <input className={styles.Putin}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -46,7 +47,10 @@ function Login() {
         </button>
         <button className={styles.botao2} type="submit" onClick={cadastre}>Cadastre-se</button>
       </form>
+      
       <button className={styles.botao3} type="submit" onClick={esqueciSenha}>Esqueceu Senha?</button>
+  
+
     </div>
   );
 

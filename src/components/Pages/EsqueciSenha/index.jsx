@@ -1,32 +1,38 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Styles from './EsqueciSenha.module.css';
+import { Link } from 'react-router-dom';
+
 
 
 const EsqueciSenha = () => {
   const [email, setEmail] = useState('');
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Aqui você pode fazer o tratamento do email esquecido, como enviar um email de redefinição de senha
-
-    // Resetar o estado do campo após o envio
     setEmail('');
   };
 
   return (
     <div>
-      <h1>Esqueci a senha</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <div className={Styles.Box}>
+      <h1 className={Styles.TextForm}>Esqueceu a senha?</h1>
+
+      <form  className={Styles.EditarForm} onSubmit={handleSubmit}>
+        <label className={Styles.Label}>
           Email:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input className={Styles.EditPut} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <br />
-        <button type="submit">Enviar</button>
+        <Link to="/login">
+        <button className={Styles.Btn} type="submit">Enviar</button>
+        </Link>
       </form>
+      </div>
     </div>
   );
 };
 
+
 export default EsqueciSenha;
+

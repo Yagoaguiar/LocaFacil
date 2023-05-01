@@ -8,7 +8,7 @@ import Menu from "../src/components/Pages/Menu";
 import Card from "../src/components/Pages/Card";
 import TodasAsMaquinas from "../src/components/Pages/TodasAsMaquinas";
 import AdicionarMaquina from "../src/components/Pages/AdicionarMaquina";
-import Cadastro from "../src/components/Pages/Cadastro/index"
+import Cadastro from "../src/components/Pages/Cadastro/index";
 function App() {
   return (
     <BrowserRouter>
@@ -23,10 +23,7 @@ function App() {
           <Route path="/AdicionarMaquina" element={<AdicionarMaquina />} />
           <Route path="/TodasAsMaquinas" element={<TodasAsMaquinas />} />
           <Route path="/Card" element={<Card />} />
-          <Route path="/Cadastrese" element={<Cadastro />} />
-      
-
-          
+          <Route path="/cadastro" element={<Cadastro />} />
         </Routes>
       </div>
     </BrowserRouter>
