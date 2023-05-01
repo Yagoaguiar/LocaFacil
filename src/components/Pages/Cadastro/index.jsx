@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './Cadastro.module.css'
+import { Link } from 'react-router-dom';
+import style from './Cadastro.module.css'
 const Cadastro = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -30,37 +31,42 @@ const Cadastro = () => {
   };
 
   return (
-    <div>
-      <h1>Cadastro</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className={style.formContainer}>
+      <form className={style.Mainform} onSubmit={handleSubmit} >
+        <h1 className={style.mainTittle}>Cadastro</h1>
+        <label className={style.mainLabel}>
           Nome:
           <input
+            className={style.mainInput}
             type="text"
             value={nome}
             onChange={handleNomeChange}
           />
         </label>
         <br />
-        <label>
+        <label className={style.mainLabel}>
           Email:
           <input
+            className={style.mainInput}
             type="email"
             value={email}
             onChange={handleEmailChange}
           />
         </label>
         <br />
-        <label>
+        <label className={style.mainLabel}>
           Senha:
           <input
+            className={style.mainInput}
             type="password"
             value={senha}
             onChange={handleSenhaChange}
           />
         </label>
         <br />
-        <button type="submit">Cadastrar</button>
+        <Link to="/login">
+        <button className={style.Bt} type="submit">Cadastrar</button>
+        </Link>
       </form>
     </div>
   );
