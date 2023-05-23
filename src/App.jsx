@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 import Home from "../src/components/Pages/Home/index";
-import Login from "./components/Pages/Login";
-import Maquina from "../src/components/Pages/Maquinas/index";
-import Contato from "../src/components/Pages/Contato/index";
-import EsqueciSenha from "../src/components/Pages/EsqueciSenha/index";
-import Menu from "../src/components/Pages/Menu";
-import Card from "../src/components/Pages/Card";
-import TodasAsMaquinas from "../src/components/Pages/TodasAsMaquinas";
-import AdicionarMaquina from "../src/components/Pages/AdicionarMaquina";
-import Cadastro from "../src/components/Pages/Cadastro/index";
+import Login from "./components/Pages/Login/Login";
+import Maquina from "./components/Pages/Maquinas/Maquinas";
+import Contato from "./components/Pages/Contato/Contato";
+import EsqueciSenha from "./components/Pages/EsqueciSenha/EsqueciSenha";
+import Menu from "./components/Pages/Menu/Menu";
+import Card from "./components/Pages/Card/Card";
+import TodasAsMaquinas from "./components/Pages/TodasAsMaquinas/TodasAsMaquinas";
+import AdicionarMaquina from "./components/Pages/AdicionarMaquina/AdicionarMaquina";
+import Cadastro from "./components/Pages/Cadastro/Cadastro";
 import Erro404 from "../src/components/Pages/Erro404/erro"
 
 export default function App() {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TodasAsMaquinas from '../TodasAsMaquinas/index';
+import TodasAsMaquinas from '../TodasAsMaquinas/TodasAsMaquinas';
 
 
 const Card = ({ title, description, machineCode, traction, value }) => {
