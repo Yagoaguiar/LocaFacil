@@ -37,6 +37,7 @@ export default function App() {
         ) : (
           <>
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
+            <Route path="" element={<Home />} />
             <Route path="/esquecisenha" element={<EsqueciSenha />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/home" element={<Home />} />
