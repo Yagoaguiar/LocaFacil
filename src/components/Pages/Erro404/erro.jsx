@@ -1,22 +1,22 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 function ErrorPage() {
   const navigate = useNavigate();
 
   function handleGoBack() {
-    navigate('/');
+    navigate("/");
   }
 
   function handleLogin() {
-    navigate('/login');
+    navigate("/login");
   }
 
   return (
     <div>
-      <h1>Erro 404!</h1>
-      <p>Esse erro pode ter ocorrido por diversos motivos, como por exemplo, a página solicitada não existir ou a necessidade de fazer login para acessá-la.</p>
-      <p>Caso você já esteja logado, clique no botão a seguir para retornar à página inicial:</p>
+      <h1>Para anuncioar máquina faça seu cadastro</h1>
       <button onClick={handleGoBack}>Voltar</button>
-      <p>Caso ainda não esteja logado, clique no botão a seguir para fazer login:</p>
+      <p>
+        Caso ainda não esteja logado, clique no botão a seguir para fazer login:
+      </p>
       <button onClick={handleLogin}>Fazer login</button>
     </div>
   );
