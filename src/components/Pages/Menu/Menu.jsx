@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
-import styles from './Menu.module.css';
-
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import styles from "./Menu.module.css";
 
 export default function Menu() {
   return (
@@ -22,12 +22,11 @@ export default function Menu() {
           <li className={styles.navBtn}>
             <Link to="/Card">Card</Link>
           </li>
-            <li className={styles.navBtn}>
-                <Link to="/Login">Login</Link>
-            </li>
+          <li className={styles.navBtn}>
+            <Link to="/Login">Login</Link>
+          </li>
         </ul>
-        <ul>
-        </ul>
+        <ul></ul>
       </header>
     </div>
   );
