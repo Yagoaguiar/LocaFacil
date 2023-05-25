@@ -37,6 +37,7 @@ export default function App() {
           <Route path="/maquina" element={<Maquina />} />
           <Route path="/Card" element={<Card />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/login" element={logado ? <Home /> : <Login onLogin={handleLogin} />} />
 
           {logado && (
             <>
@@ -50,7 +51,7 @@ export default function App() {
               />
             </>
           )}
-
+          
           <Route path="*" element={<Erro404 />} />
         </Routes>
       </div>
