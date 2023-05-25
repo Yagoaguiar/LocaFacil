@@ -1,29 +1,24 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import style from './Machine.module.css'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import style from "./Machine.module.css";
 
-
-const AdicionarMaquina = (props) => {
+const AdicionarMaquina = () => {
   const navigate = useNavigate();
   const [machines, setMachines] = useState([]);
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    machineCode: '',
-    traction: '',
-    value: '',
-    image: null
+    title: "",
+    description: "",
+    machineCode: "",
+    traction: "",
+    value: "",
+    image: null,
   });
 
-  function handleClick(event) {
-    props.onLogout(event)
-    navigate('/TodasAsMaquinas')
-}
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -31,7 +26,7 @@ const AdicionarMaquina = (props) => {
     const imageFile = event.target.files[0];
     setFormData((prevData) => ({
       ...prevData,
-      image: URL.createObjectURL(imageFile)
+      image: URL.createObjectURL(imageFile),
     }));
   };
 
@@ -40,19 +35,18 @@ const AdicionarMaquina = (props) => {
     const newMachine = { ...formData, id: Date.now() };
     setMachines((prevMachines) => [...prevMachines, newMachine]);
     setFormData({
-      title: '',
-      description: '',
-      machineCode: '',
-      traction: '',
-      value: '',
-      image: null
+      title: "",
+      description: "",
+      machineCode: "",
+      traction: "",
+      value: "",
+      image: null,
     });
   };
 
   return (
     <div className={style.formContainer}>
-      
-      <form className={style.Mainform}>
+      <form className={style.Mainform} onSubmit={handleSubmit}>
         <h1 className={style.TittleOne}>Adicionar Máquina</h1>
         <label className={style.mainLabel}>
           Título:
@@ -68,7 +62,7 @@ const AdicionarMaquina = (props) => {
         <label className={style.mainLabel}>
           Descrição:
           <input
-          className={style.mainInput}
+            className={style.mainInput}
             type="text"
             name="description"
             value={formData.description}
@@ -79,7 +73,7 @@ const AdicionarMaquina = (props) => {
         <label className={style.mainLabel}>
           Código da Máquina:
           <input
-          className={style.mainInput}
+            className={style.mainInput}
             type="text"
             name="machineCode"
             value={formData.machineCode}
@@ -90,7 +84,7 @@ const AdicionarMaquina = (props) => {
         <label className={style.mainLabel}>
           Tração:
           <input
-          className={style.mainInput}
+            className={style.mainInput}
             type="text"
             name="traction"
             value={formData.traction}
@@ -101,7 +95,7 @@ const AdicionarMaquina = (props) => {
         <label className={style.mainLabel}>
           Valor:
           <input
-          className={style.mainInput}
+            className={style.mainInput}
             type="text"
             name="value"
             value={formData.value}
@@ -112,21 +106,23 @@ const AdicionarMaquina = (props) => {
         <label className={style.mainLabel}>
           Imagem:
           <input
-          className={style.mainInput}
+            className={style.mainInput}
             type="file"
             accept="image/*"
             onChange={handleImageChange}
           />
         </label>
         <br />
-        <button onClick={handleClick}>Adicionar Máquina</button>
+        <button type="submit">Adicionar Máquina</button>
       </form>
       <div>
-        {machines.map(machine => (
+        {machines.map((machine) => (
           <div key={machine.id}>
             <h3>{machine.title}</h3>
             <p>{machine.description}</p>
-            <p className={style.teste}>Código da Máquina: {machine.machineCode}</p>
+            <p className={style.teste}>
+              Código da Máquina: {machine.machineCode}
+            </p>
             <p>Tração: {machine.traction}</p>
             <p>Valor: {machine.value}</p>
             {machine.image && (
@@ -135,7 +131,6 @@ const AdicionarMaquina = (props) => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };
