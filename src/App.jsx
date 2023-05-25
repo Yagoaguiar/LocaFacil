@@ -25,10 +25,20 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div>
+        <div>
         <Menu />
         <Routes>
-          {logado ? (
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/esquecisenha" element={<EsqueciSenha />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/TodasAsMaquinas" element={<TodasAsMaquinas />} />
+          <Route path="/maquina" element={<Maquina />} />
+          <Route path="/Card" element={<Card />} />
+          <Route path="/contato" element={<Contato />} />
+
+          {logado && (
             <>
               <Route
                 path="/AdicionarMaquina"
@@ -39,19 +49,8 @@ export default function App() {
                 element={<Login onLogout={handleLogout} />}
               />
             </>
-          ) : (
-            <>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login onLogin={handleLogin} />} />
-              <Route path="/esquecisenha" element={<EsqueciSenha />} />
-              <Route path="/cadastro" element={<Cadastro />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/TodasAsMaquinas" element={<TodasAsMaquinas />} />
-              <Route path="/maquina" element={<Maquina />} />
-              <Route path="/Card" element={<Card />} />
-              <Route path="/contato" element={<Contato />} />
-            </>
           )}
+
           <Route path="*" element={<Erro404 />} />
         </Routes>
       </div>
